@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log('Tâche créée:', task); // Debug
 
-            // Réinitialisation du formulaire et affichage des tâches
+            // Reset du formulaire et affichage des tâches
             e.target.reset();
             displayTasks(taskManager.getUserTasks(userManager.currentUser.id));
             
