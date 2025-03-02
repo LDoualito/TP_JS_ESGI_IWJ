@@ -1,158 +1,215 @@
-/* Reset et styles de base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #545454;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f7fa;
     padding: 20px;
-}
-
-.container {
+  }
+  
+  .container {
     max-width: 800px;
     margin: 0 auto;
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Styles des formulaires */
-.form-group {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Header et titre */
+  .app-header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .app-title {
+    color: #0d4c92;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Formulaires */
+  .form-group {
     margin-bottom: 15px;
-}
-
-.form-group label {
+  }
+  
+  .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
-}
-
-.form-group input,
-.form-group textarea {
+    font-weight: bold;
+    color: #0d4c92;
+  }
+  
+  .form-group input,
+  .form-group textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
+    padding: 10px;
+    border: 1px solid #ccd7e6;
     border-radius: 4px;
-    font-size: 14px;
-}
-
-.form-group textarea {
+    background-color: #f9fafc;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #0d4c92;
+  }
+  
+  .form-group textarea {
     height: 100px;
     resize: vertical;
-}
-
-/* Styles des boutons */
-.btn {
+  }
+  
+  /* Boutons */
+  .btn {
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.btn-primary {
-    background-color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: #0d4c92;
     color: white;
-}
-
-.btn-danger {
-    background-color: #f44336;
+  }
+  
+  .btn-danger {
+    background-color: #e63946;
     color: white;
-}
-
-.btn-primary:hover {
-    background-color: #45a049;
-}
-
-.btn-danger:hover {
-    background-color: #da190b;
-}
-
-/* Styles des tâches */
-.task {
-    border: 1px solid #ddd;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0a3c73;
+  }
+  
+  .btn-danger:hover {
+    background-color: #d12636;
+  }
+  
+  /* Navigation */
+  .nav-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccd7e6;
+  }
+  
+  .nav-tab {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+    color: #555;
+    position: relative;
+    font-weight: bold;
+  }
+  
+  .nav-tab:hover {
+    color: #0d4c92;
+  }
+  
+  .nav-tab.active {
+    color: #0d4c92;
+  }
+  
+  .nav-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0d4c92;
+  }
+  
+  /* Sections */
+  .section {
+    display: none;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  
+  /* Tâches */
+  .task {
+    border: 1px solid #ccd7e6;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 4px;
     background-color: white;
-}
-
-.task.completed {
-    background-color: #f9f9f9;
-    border-color: #4CAF50;
-}
-
-.task-header {
+  }
+  
+  .task.completed {
+    background-color: #f0f7ff;
+    border-left: 3px solid #0d4c92;
+  }
+  
+  .task-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-}
-
-.task-title {
+  }
+  
+  .task-title {
     font-weight: bold;
-    color: #333;
-}
-
-.task-actions {
+    color: #0d4c92;
+  }
+  
+  .task-actions {
     display: flex;
-    gap: 10px;
-}
-
-/* Styles des sections */
-.section {
-    display: none;
-    margin-bottom: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.section.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Barre de recherche */
-.search-bar {
-    margin-bottom: 20px;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    gap: 8px;
+  }
+  
+  .deadline {
     font-size: 14px;
-}
-
-/* Messages d'erreur */
-.error-message {
-    color: #f44336;
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-/* Navigation */
-.nav-tabs {
-    display: flex;
-    gap: 10px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .deadline.overdue {
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  /* Recherche */
+  .search-bar {
     margin-bottom: 20px;
-}
-
-.nav-tab {
-    padding: 8px 16px;
-    background-color: #f5f5f5;
-    border: none;
+    position: relative;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    border: 1px solid #ccd7e6;
     border-radius: 4px;
-    cursor: pointer;
-}
-
-.nav-tab.active {
-    background-color: #4CAF50;
-    color: white;
-}
+    background-color: #f9fafc;
+  }
+  
+  .search-bar::before {
+    content: "🔍";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0d4c92;
+    opacity: 0.5;
+  }
+  
+  /* États vides */
+  .empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    background-color: #f0f7ff;
+    border: 1px dashed #ccd7e6;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
